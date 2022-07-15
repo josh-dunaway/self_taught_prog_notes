@@ -191,6 +191,7 @@ for i in range(1,6):
     if i == 3:
         continue
     print(i)
+print()
 
 ch7_vocab = {'Loop': '''A piece of code that continually executes instructions
 until a condition defined in the code is satisfied.''',
@@ -223,7 +224,7 @@ def get_nth_key(dictionary: dict, index = 0):
 
 def get_value_from_key(dictionary: dict, key):
     if key in dictionary:
-        return key
+        return dictionary.get(key)
     return None
 
 def print_formatted_definition(key: str, value: str) -> None:
@@ -231,14 +232,24 @@ def print_formatted_definition(key: str, value: str) -> None:
 
 print_numbered_dict_keys(ch7_vocab)
 while True:
-    user_selection = input('Select vocab for definition (q to quit): ')
+    user_selection = input('Select vocab for definition \
+        \n(m for list, q to quit): ')
     if user_selection == 'q':
         break
-    if user_selection not in range(len(ch7_vocab) + 1):
+    if user_selection == 'm':
+        print_numbered_dict_keys(ch7_vocab)
+        continue
+    try:
+        user_selection = int(user_selection)
+    except ValueError:
+        print('Invalid selection. Please enter a number.')
+        continue
+    if user_selection < 1 or user_selection > len(ch7_vocab):
         print('Invalid selection. Enter 1 thru {}:'.format(len(ch7_vocab)))
         continue
     else:
         key = get_nth_key(ch7_vocab, user_selection - 1)
         value = get_value_from_key(ch7_vocab, key)
+        print()
         print_formatted_definition(key, value)
-    print_numbered_dict_keys(ch7_vocab)
+        print()
