@@ -9,7 +9,7 @@ print('''\n#2 - write program that collects two strings from user, inserts them
     # into the string 'Yesterday I wrote a [response_one]. I sent it to
     # [response_two]!' and prints new string\n''')
 
-def get_two_strings_from_user() -> []:
+def get_two_strings_from_user():
     try:
         response_one = input('enter first string: ')
         response_two = input('enter second string: ')
