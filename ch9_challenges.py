@@ -1,3 +1,4 @@
+import csv
 print('\n*************************CHALLENGE #1*************************')
 
 print('''
@@ -10,7 +11,6 @@ if input('Do you want to open file for reading (y / n)') == 'y':
     import sys
     import os
 
-    user_input = input('Enter path for file: ')
 
     assert os.path.exists(
         user_input), 'I did not find the file at\n{}'.format(str(user_input))
@@ -33,18 +33,17 @@ print('''
 take items in list of list and write them to csv file''')
 
 movies = [["Top Gun", "Risky Business", "Minority Report"],
-          ["Titanic", "The Revenant", "Inception"], 
+          ["Titanic", "The Revenant", "Inception"],
           ["Training Day", "Man on Fire", "Flight"]]
 
-import csv
 
-#writing to csv file
+# writing to csv file
 with open('output_files\\movies.csv', 'w') as f:
     w = csv.writer(f, delimiter=',')
     for row in movies:
         w.writerow(row)
 
-#reading from csv file
+# reading from csv file
 with open('output_files\\movies.csv', 'r') as f:
     r = csv.reader(f, delimiter=',')
     for row in r:
