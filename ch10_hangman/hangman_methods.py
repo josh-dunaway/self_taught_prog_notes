@@ -24,3 +24,23 @@ def get_random_line_from_file(path: str) -> str:
         for i in range(random.randint(1, num_lines)):
             selected_word = f.readline()
     return selected_word
+
+def get_char_from_user():
+    while True:
+        ch = input("Enter char: ")
+        if len(ch) == 0:
+            print("empty guess not allowed")
+            continue
+        return ch[0]
+        break
+
+def play_hangman(path, GUESS_LIMIT):
+    word = get_random_line_from_file(path)
+    if word == None:
+        print("Unable to load word from file")
+        return
+    word_line = ['__ '] * len(word)
+    guesses = 0
+    while guesses < len(GUESS_LIMIT):
+        char = get_char_from_user()
+#stopping here until I get to object-oriented design
