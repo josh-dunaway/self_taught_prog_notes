@@ -29,8 +29,3 @@ def reverse_string(string):
     while(not stack.is_empty()):
         reverse += stack.pop()
     return reverse
-
-#testing Stack using reverse_string function
-stack2 = Stack()
-print(reverse_string('abcdefghijklmnopqrstuvwxyz'))
-print(reverse_string(stack2))
