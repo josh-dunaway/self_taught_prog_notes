@@ -1,4 +1,3 @@
-print('''
  ██████╗██╗  ██╗    ██████╗  ██╗              ██████╗  █████╗ ████████╗ █████╗      
 ██╔════╝██║  ██║    ╚════██╗███║              ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗     
 ██║     ███████║     █████╔╝╚██║    █████╗    ██║  ██║███████║   ██║   ███████║     
@@ -12,5 +11,43 @@ print('''
 ╚════██║   ██║   ██╔══██╗██║   ██║██║        ██║   ██║   ██║██╔══██╗██╔══╝  ╚════██║
 ███████║   ██║   ██║  ██║╚██████╔╝╚██████╗   ██║   ╚██████╔╝██║  ██║███████╗███████║
 ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
-                                                                                                                                                                        
-''')
+
+
+***************************** STACK *******************************
+
+Last in, first out (LIFO) data structure. Notable functionality:
+    push - add item to top of stack
+    pop - remove and return the top of the stack
+    peek - return top of stack without popping
+    is_empty - returns true if no elements in stack
+    size - returns number of elements in stack
+
+Use cases:
+    1) Reversing Order
+    2) Testing Symmetry
+    3) Undoing commands
+
+See https://tinyurl.com/4xp944k2 for implementation of use cases
+
+***************************** QUEUES ******************************
+
+First in, first out (FIFO) data structure. Notable functionality:
+    enqueue - adds new item to queue
+    dequeue - removes item from queue
+    is_empty - true if queue empty
+    size - number of elements in queue
+
+Use cases:
+    1) CPU / Disk Scheduling
+    2) When data transferred asynchonously b/t two processes
+        example: IO Buffers, pipes, file IO, etc.
+    3) queues in routers / switches
+    4) Mail queues
+
+********************************************************************
+Note:
+The Self-Taught Programmer stops here with Data Structures. I will
+dive deeper and continue studying additional data structures and add
+my  notes from them below this line:
+
+********************************************************************
