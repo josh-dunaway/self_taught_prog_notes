@@ -84,18 +84,3 @@ class LinkedList:
         while node:
             yield node
             node = node.next
-
-import random
-
-rndm = []
-for i in range(10):
-    rndm.append(random.randint(1,50))
-ll = LinkedList(rndm)
-print(ll)
-
-from collections import deque
-dq = deque('abcdefghijklmnopqrstuvwxyz')
-print(dq)
-
-ll2 = LinkedList([5, 4, 3, 2, 1])
-print(ll2)
