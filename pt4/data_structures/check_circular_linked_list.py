@@ -2,23 +2,23 @@ from typing import Optional
 import linked_list as LinkedList
 
 #this uses Floy'd cycle detection algorithm
-def start_of_loop(head: LinkedList.Node) -> Optional[LinkedList.Node]:    
-    p = has_loop(head)
-    if p:
-        q = head
-        while p != q:
-            p = p.next
-            q = q.next
-        return p
+def start_of_cycle(head: LinkedList.Node) -> Optional[LinkedList.Node]:    
+    pointer1 = has_cycle(head)
+    if pointer1:
+        pointer2 = head
+        while pointer1 != pointer2:
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next
+        return pointer1
     return None
 
 #if the linked list contains a loop, return the  
-def has_loop(head: LinkedList.Node) -> Optional[LinkedList.Node]:
-    p = head
-    q = head
-    while p and q and q.next:
-        p = p.next
-        q = q.next.next
-        if p == q:
-            return p
+def has_cycle(head: LinkedList.Node) -> Optional[LinkedList.Node]:
+    slow = head
+    fast = head
+    while slow and fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return slow
     return None
